@@ -14,9 +14,10 @@ return new class extends Migration
         Schema::create('diplomes', function (Blueprint $table) {
             $table->id();
             $table->string('nom', 50);
-            $table->date('created_at');
-            $table->date('updated_at');
             $table->timestamps();
+            
+            $table->foreignId('formateur_id')->constrained();
+
         });
     }
 

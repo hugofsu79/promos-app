@@ -2,28 +2,24 @@
 
 namespace App\Models;
 
-// use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Database\Eloquent\Model;
 
-class User extends Authenticatable
+class Diplome extends Model
 {
-    use HasApiTokens, HasFactory, Notifiable;
-
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
+    use HasFactory;
+    
     protected $fillable = [
         'nom',
     ];
-
-    public function role()
+    
+    public function formateurs()
     {
-        return $this->belongsTo(Eleve::class);
+        return $this->belongsTo(Formateur::class);
     }
-
+    public function promos()
+    {
+        return $this->hasMany(Promos::class);
+    }
 }
+

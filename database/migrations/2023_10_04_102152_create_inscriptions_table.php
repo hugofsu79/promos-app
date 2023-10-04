@@ -11,12 +11,12 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('eleves', function (Blueprint $table) {
-            $table->id();
-            $table->string('nom', 25);
-            $table->string('prenom', 25);
-            $table->integer('age');
+        Schema::create('inscriptions', function (Blueprint $table) {
+            
             $table->timestamps();
+
+            $table->foreignId('eleve_id')->constrained();
+            $table->foreignId('promos_id')->constrained();
 
         });
     }
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('promos');
+        Schema::dropIfExists('inscriptions');
     }
 };

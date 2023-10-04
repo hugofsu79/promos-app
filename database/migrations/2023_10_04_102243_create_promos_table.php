@@ -13,9 +13,11 @@ return new class extends Migration
     {
         Schema::create('promos', function (Blueprint $table) {
             $table->id();
+            $table->date('date_debut');
+            $table->date('date_fin');
             $table->timestamps();
-            $table->date('created_at');
-            $table->date('updated_at');
+            $table->foreignId('diplome_id')->constrained();
+            
         });
     }
 
