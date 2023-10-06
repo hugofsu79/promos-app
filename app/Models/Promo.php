@@ -10,15 +10,18 @@ class Promo extends Model
     use HasFactory;
 
     protected $fillable = [
-        'date',
+        'date_debut',
+        'date_fin',
+        'diplome_id',
+        'eleve_id',
     ];
 
     public function eleves()
     {
-        return $this->belongsToMany(Eleve::class);
+        return $this->belongsToMany(Eleve::class,'inscriptions');
     }
-    public function diplomes()
+    public function diplome()
     {
-        return $this->hasMany(Diplome::class);
+        return $this->belongsTo(Diplome::class);
     }
 }

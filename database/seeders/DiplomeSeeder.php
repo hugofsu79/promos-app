@@ -14,22 +14,38 @@ class DiplomeSeeder extends Seeder
     public function run(): void
     {
         Diplome::create([
-            'nom' => 'Développpeur Web/ web mobile'
+            'nom' => 'Développpeur Web/ web mobile',
+            'formateur_id' => 1
         ]);
+
         Diplome::create([
-            'nom' => 'Concepteur designer UI / Designer Web'
+            'nom' => 'Concepteur designer UI / Designer Web',
+            'formateur_id' => 2
         ]);
+
         Diplome::create([
-            'nom' => 'Infographiste metteur en page'
+            'nom' => 'Infographiste metteur en page',
+            'formateur_id' => 2
         ]);
+
         Diplome::create([
-            'nom' => 'Technicien d\'assistance informatique'
+            'nom' => 'Technicien d\'assistance informatique',
+            'formateur_id' => 3
         ]);
+
         Diplome::create([
-            'nom' => 'Digital Marketing Manager'
+            'nom' => 'Digital Marketing Manager',
+            'formateur_id' => 2
         ]);
+
         Diplome::create([
-            'nom' => 'Gestion des réseaux sociaux'
+            'nom' => 'Gestion des réseaux sociaux',
+            'formateur_id' => 2
+        ]);
+
+        Diplome::create([
+            'nom' => 'Concepteur d\'application',
+            'formateur_id' => 1
         ]);
     }
 }

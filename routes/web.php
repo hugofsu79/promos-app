@@ -1,18 +1,35 @@
 <?php
 
+use App\Http\Controllers\PromoController;
+use App\Http\Controllers\EleveController;
+use App\Http\Controllers\FormateurController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DiplomeController;
+use App\Models\Eleve;
 use Illuminate\Support\Facades\Route;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+//***********************Route d'affichage  de la page home**********************************/
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+//*******************Route pour les méthodes du controller diplôme**************************/
+Route::resource('/diplomes', DiplomeController::class);
+
+//*******************Route pour les méthodes du controller eleve**************************/
+Route::resource('/eleves', EleveController::class);
+
+//*******************Route pour les méthodes du controller formateur**************************/
+Route::resource('/formateurs', FormateurController::class);
+
+//*******************Route pour les méthodes du controller promo**************************/
+Route::resource('/promos', PromoController::class);
+
+
+
+// Méthode fallback() en dernière position
+Route::fallback(function () {
+    return view('404'); // la vue 404.blade.php
 });

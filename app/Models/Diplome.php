@@ -13,7 +13,7 @@ class Diplome extends Model
         'nom',
     ];
     
-    public function formateurs()
+    public function formateur()
     {
         return $this->belongsTo(Formateur::class);
     }

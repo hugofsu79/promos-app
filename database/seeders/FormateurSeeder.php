@@ -16,7 +16,18 @@ class FormateurSeeder extends Seeder
         Formateur::create([
             'nom' => 'Virot',
             'prenom' => 'Hugo',
-            'age' => 34
+            'age' => 34,
         ]);
+        Formateur::create([
+            'nom' => 'Ravet',
+            'prenom' => 'François',
+            'age' => 43,
+        ]);
+        Formateur::create([
+            'nom' => 'Righi',
+            'prenom' => 'Rachid',
+            'age' => 53,
+        ]);
+        
     }
 }

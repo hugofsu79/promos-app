@@ -16,6 +16,6 @@ class Eleve extends Model
 
     public function promos()
     {
-        return $this->hasMany(Promo::class);
+        return $this->belongsToMany(Promo::class,'inscriptions');
     }
 }

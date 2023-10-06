@@ -16,7 +16,7 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreignId('eleve_id')->constrained();
-            $table->foreignId('promos_id')->constrained();
+            $table->foreignId('promo_id')->constrained();
 
         });
     }
